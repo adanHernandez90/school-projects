@@ -1,0 +1,2 @@
+vhdtdtfi -lang verilog -prj MIPS -o "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/I_O.tfi" -lib work "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS//I_O.v" -module I_O -template C:/Xilinx/12.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj MIPS -o "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/I_O.tfi" -lib work "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS//I_O.v" -module I_O -template C:/Xilinx/12.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

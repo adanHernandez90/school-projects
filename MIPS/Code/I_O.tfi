@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+I_O instance_name (
+    .sys_clk(sys_clk), 
+    .intr(intr), 
+    .Addr(Addr), 
+    .D_In(D_In), 
+    .intr_req(intr_req), 
+    .intr_ack(intr_ack), 
+    .IO_wr(IO_wr), 
+    .IO_rd(IO_rd), 
+    .IO_D_Out(IO_D_Out)
+    );
+
+

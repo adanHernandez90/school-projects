@@ -1,0 +1,50 @@
+ISim log file
+Running: C:\Users\Ludwig\Documents\CECS 440 Comp Arch\CPU\MIPS\Top_lvlTB_isim_beh.exe -gui -tclbatch isim.cmd -wdb C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Top_lvlTB_isim_beh.wdb 
+ISim M.63c (signature 0x7dea747)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+ WITH ISR, Interrupt after writing to register 1 to 15 
+Finished circuit initialization process.
+# run all
+ILLEGAL OPCODE FETCHED 1130.0 ns
+time = 1131.0 ns, Register 00000000 = 00000000
+time = 1131.0 ns, Register 00000001 = 12345678
+time = 1131.0 ns, Register 00000002 = 87654321
+time = 1131.0 ns, Register 00000003 = abcdef01
+time = 1131.0 ns, Register 00000004 = 01fedcba
+time = 1131.0 ns, Register 00000005 = 5a5a5a5a
+time = 1131.0 ns, Register 00000006 = ffffffff
+time = 1131.0 ns, Register 00000007 = ffffff00
+time = 1131.0 ns, Register 00000008 = xxxxxxxx
+time = 1131.0 ns, Register 00000009 = 000000ff
+time = 1131.0 ns, Register 0000000a = 3579bde0
+time = 1131.0 ns, Register 0000000b = abcdef01
+time = 1131.0 ns, Register 0000000c = xxxxxxxx
+time = 1131.0 ns, Register 0000000d = xxxxxxxx
+time = 1131.0 ns, Register 0000000e = xxxxxxxx
+time = 1131.0 ns, Register 0000000f = xxxxxxxx
+time = 1131.0 ns, Register 00000010 = xxxxxxxx
+time = 1131.0 ns, Register 00000011 = xxxxxxxx
+time = 1131.0 ns, Register 00000012 = xxxxxxxx
+time = 1131.0 ns, Register 00000013 = xxxxxxxx
+time = 1131.0 ns, Register 00000014 = xxxxxxxx
+time = 1131.0 ns, Register 00000015 = xxxxxxxx
+time = 1131.0 ns, Register 00000016 = xxxxxxxx
+time = 1131.0 ns, Register 00000017 = xxxxxxxx
+time = 1131.0 ns, Register 00000018 = xxxxxxxx
+time = 1131.0 ns, Register 00000019 = xxxxxxxx
+time = 1131.0 ns, Register 0000001a = xxxxxxxx
+time = 1131.0 ns, Register 0000001b = xxxxxxxx
+time = 1131.0 ns, Register 0000001c = xxxxxxxx
+time = 1131.0 ns, Register 0000001d = 00000404
+time = 1131.0 ns, Register 0000001e = xxxxxxxx
+time = 1131.0 ns, Register 0000001f = xxxxxxxx
+time = 1131.0 ns , PC = 00000204, IR = xxxxxxxx
+Stopped at time : 1131 ns : File "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/MCU.v" Line 1707

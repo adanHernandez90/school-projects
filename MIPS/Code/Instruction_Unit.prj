@@ -1,0 +1,2 @@
+verilog work "Data_Memory.v"
+verilog work "InstructionUnit.v"

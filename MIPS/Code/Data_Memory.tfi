@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+Data_Memory instance_name (
+    .clk(clk), 
+    .dm_cs(dm_cs), 
+    .dm_wr(dm_wr), 
+    .dm_rd(dm_rd), 
+    .D_Out(D_Out), 
+    .Addr(Addr), 
+    .D_In(D_In)
+    );
+
+

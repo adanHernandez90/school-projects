@@ -1,0 +1,67 @@
+@0
+00 00 00 1f  // main:      setie	                                          0
+3c 01 12 34  //            lui  $01, 0x1234									  4
+34 21 56 78  //            ori  $01, 0x5678      # LI  R01,  0x12345678       8
+3c 02 87 65  //            lui  $02, 0x8765                                   c
+34 42 43 21  //            ori  $02, 0x4321      # LI  R02,  0x87654321      10
+3c 03 ab cd  //            lui  $03, 0xABCD                                  14
+34 63 ef 01  //            ori  $03, 0xEF01      # LI  R03,  0xABCDEF01      18
+3c 04 01 fe  //            lui  $04, 0x01FE                                  1c
+34 84 dc ba  //            ori  $04, 0xDCBA      # LI  R04,  0x01FEDCBA      20
+3c 05 5a 5a  //            lui  $05, 0x5A5A                                  24
+34 a5 5a 5a  //            ori  $05, 0x5A5A      # LI  R05,  0x5A5A5A5A      28
+3c 06 ff ff  //            lui  $06, 0xFFFF                                  2c
+34 c6 ff ff  //            ori  $06, 0xFFFF      # LI  R06,  0xFFFFFFFF      30
+3c 07 ff ff  //            lui  $07, 0xFFFF                                  34  
+34 e7 ff 00  //            ori  $07, 0xFF00      # LI  R07,  0xFFFFFF00      38
+         
+7c c3 50 c0 //			   BSRR $10,#07,#3		 # R10<--R3  >> 3 , 0x3579bde0 3c
+7c 8A 58 c0 //			   BSLR $11,#10,#3		 # R11<--R10 << 3 , 0xABCDEF01 40
+7c 27 00 16 //             BGEZ $07, fail_BGEZ   #if branch, failure of BGEZ   44
+7c 20 00 01 //             BGEZ $00, pass_BGEZ   #if branch, pass of BGEZ      48
+00 00 00 0d //             break                                               4c
+   
+
+7c 00 00 16  // pass_BGEZ: BLTZ $01,fail_BLTZ    #if branch, failure of BLTZ   50
+7c 07 00 01  //            BLTZ $07,pass_BLTZ    #if branch, pass of BLTZ      54
+00 00 00 0d  //            break                                               58
+
+00 c7 48 22 // pass_BLTZ:  sub $09,$06,$07                                     5c
+7c 60 00 00 //             no_op                                               60
+7c 60 00 00 //             no_op                                               64
+7c 60 00 00 //             no_op                                               68
+7d 20 00 2e //             JC fail_jc                                          6c
+3c 0f f0 f0 // pass_JC :   lui $15, 0xF0F0                                     70
+35 ef f0 f0 //             ori $15, 0xF0F0        # $r15 <-- 0xF0F0F0F0  (pass flag JC) 74
+7d 80 00 31 //             JV fail_jv													78
+3c 10 70 A0 // pass_JV :   lui $16, 0x70A0                                              7c
+36 10 70 A0 //             ori $16, 0x70A0        # $r16 <-- 0x70A070A0  (pass flag JV) 80 
+7d 60 00 34 //             JN fail_jn											        84
+3c 11 B0 B0 // pass_JN :   lui $17, 0xB0B0                                              88
+36 31 B0 B0 //             ori $17, 0xB0B0        # $r16 <-- 0xB0B0B0B0  (pass flag JN) 8c
+7d 40 00 36 // 			   JZ fail_jz                                                   90
+3c 11 B0 B0 // pass_JN :   lui $17, 0xc0c0                                              88
+36 31 B0 B0 //             ori $17, 0xc0c0      # $r24 <-- 0xC0C0C0C0  (pass flag JZ) 98
+00 00 00 0d  //            break											            9c
+
+
+
+
+3c 0e ff ff  // fail_BGEZ: lui $14, 0xFFFF                                                   A0
+35 ce ff ff  //            ori  $14, 0xFFFF        # $r14 <-- 0xFFFFFFFF  (Fail flag 1 BGEZ) A4
+00 00 00 0d  //            break                                                             A8
+3c 0e ff ff  // fail_BLTZ  lui  $14, 0xFFFF                                                  AC
+35 ce ff fe  //            ori  $14, 0xFFFE        # $r14 <-- 0xFFFFFFFE  (Fail flag 2 BLTZ) B0
+00 00 00 0d  //            break                                                             B4
+3c 0e ff ff  // fail_JC:   lui  $14, 0xFFFF                                                  B8
+35 ce ff fc  //            ori  $14, 0xFFFC        # $r14 <-- 0xFFFFFFFC  (Fail flag 3 JC)   BC
+00 00 00 0d  //            break                                                             C0
+3c 0e ff ff  // fail_JV:   lui  $14, 0xFFFF                                                  C4
+35 ce ff fb  //            ori  $14, 0xFFFB        # $r14 <-- 0xFFFFFFFB  (Fail flag 4 JV)   C8
+00 00 00 0d  //            break                                                             CC
+3c 0e ff ff  // fail_JN:   lui  $14, 0xFFFF        # $r14 <-- 0xFFFFFFFA ( fail flag 5 JN)
+35 ce ff fa  //            ori  $14, 0xFFFB            
+00 00 00 0d  //            break                                                             D4
+3c 0e ff ff  // fail_JZ:   lui  $14, 0xFFFF                                                  D8
+35 ce ff f9  //            ori  $14, 0xFFF9        # $r14 <-- 0xFFFFFFF9  (Fail flag 6 JZ)   DC
+00 00 00 0d  //            break                                                             E0

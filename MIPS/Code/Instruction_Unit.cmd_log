@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Instruction_Unit.xst" -ofn "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Instruction_Unit.syr" 
+vhdtdtfi -lang verilog -prj MIPS -o "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Instruction_Unit.tfi" -lib work "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS//InstructionUnit.v" -module Instruction_Unit -template C:/Xilinx/12.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

@@ -1,0 +1,3 @@
+vhdtdtfi -lib work {C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Register_File_32x32.v} -lang verilog -prj MIPS -o Register_File_32x32.spl -module Register_File_32x32 -template C:/Xilinx/12.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Register_File_32x32.spl {C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Register_File_32x32.sym} 
+xst -intstyle ise -ifn "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Register_File_32x32.xst" -ofn "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/Register_File_32x32.syr" 

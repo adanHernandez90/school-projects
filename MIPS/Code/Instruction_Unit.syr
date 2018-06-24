@@ -1,0 +1,221 @@
+Release 12.2 - xst M.63c (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.22 secs
+ 
+--> Reading design: Instruction_Unit.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Instruction_Unit.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Instruction_Unit"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : Instruction_Unit
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Data_Memory.v" in library work
+Compiling verilog file "InstructionUnit.v" in library work
+Module <Data_Memory> compiled
+Module <Instruction_Unit> compiled
+No errors in compilation
+Analysis of file <"Instruction_Unit.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Instruction_Unit> in library <work>.
+
+Analyzing hierarchy for module <Data_Memory> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Instruction_Unit>.
+Module <Instruction_Unit> is correct for synthesis.
+ 
+Analyzing module <Data_Memory> in library <work>.
+Module <Data_Memory> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Data_Memory>.
+    Related source file is "Data_Memory.v".
+    Found 32-bit tristate buffer for signal <D_Out>.
+    Found 8-bit 4096-to-1 multiplexer for signal <D_Out$varindex0000> created at line 45.
+    Found 8-bit 4096-to-1 multiplexer for signal <D_Out$varindex0001> created at line 45.
+    Found 8-bit 4096-to-1 multiplexer for signal <D_Out$varindex0002> created at line 45.
+    Found 8-bit 4096-to-1 multiplexer for signal <D_Out$varindex0003> created at line 45.
+    Found 32768-bit register for signal <Mem>.
+INFO:Xst:738 - HDL ADVISOR - 32768 flip-flops were inferred for signal <Mem>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred 32768 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  64 Multiplexer(s).
+	inferred  32 Tristate(s).
+Unit <Data_Memory> synthesized.
+
+
+Synthesizing Unit <Instruction_Unit>.
+    Related source file is "InstructionUnit.v".
+    Found 32-bit register for signal <IR>.
+    Found 32-bit register for signal <PC>.
+    Found 32-bit adder for signal <PC$addsub0000> created at line 88.
+    Found 32-bit 4-to-1 multiplexer for signal <PC_in_w>.
+    Found 32-bit adder for signal <PC_in_w$addsub0000> created at line 76.
+    Summary:
+	inferred  64 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  32 Multiplexer(s).
+Unit <Instruction_Unit> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 12-bit adder                                          : 3
+ 32-bit adder                                          : 2
+# Registers                                            : 4098
+ 32-bit register                                       : 2
+ 8-bit register                                        : 4096
+# Multiplexers                                         : 9
+ 32-bit 4-to-1 multiplexer                             : 1
+ 8-bit 4093-to-1 multiplexer                           : 1
+ 8-bit 4094-to-1 multiplexer                           : 1
+ 8-bit 4095-to-1 multiplexer                           : 1
+ 8-bit 4096-to-1 multiplexer                           : 5
+# Tristates                                            : 1
+ 32-bit tristate buffer                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 12-bit adder                                          : 3
+ 32-bit adder                                          : 2
+# Registers                                            : 32832
+ Flip-Flops                                            : 32832
+# Multiplexers                                         : 40
+ 1-bit 4-to-1 multiplexer                              : 32
+ 8-bit 4093-to-1 multiplexer                           : 1
+ 8-bit 4094-to-1 multiplexer                           : 1
+ 8-bit 4095-to-1 multiplexer                           : 1
+ 8-bit 4096-to-1 multiplexer                           : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2042 - Unit Data_Memory: 32 internal tristates are replaced by logic (pull-up yes): D_Out<0>, D_Out<10>, D_Out<11>, D_Out<12>, D_Out<13>, D_Out<14>, D_Out<15>, D_Out<16>, D_Out<17>, D_Out<18>, D_Out<19>, D_Out<1>, D_Out<20>, D_Out<21>, D_Out<22>, D_Out<23>, D_Out<24>, D_Out<25>, D_Out<26>, D_Out<27>, D_Out<28>, D_Out<29>, D_Out<2>, D_Out<30>, D_Out<31>, D_Out<3>, D_Out<4>, D_Out<5>, D_Out<6>, D_Out<7>, D_Out<8>, D_Out<9>.
+
+Optimizing unit <Instruction_Unit> ...
+
+Optimizing unit <Data_Memory> ...

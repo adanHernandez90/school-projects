@@ -1,0 +1,21 @@
+
+
+
+// Instantiate the module
+Instruction_Unit instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .PC_in(PC_in), 
+    .im_cs(im_cs), 
+    .im_wr(im_wr), 
+    .im_rd(im_rd), 
+    .pc_ld(pc_ld), 
+    .pc_inc(pc_inc), 
+    .pc_sel(pc_sel), 
+    .PC_out(PC_out), 
+    .ir_ld(ir_ld), 
+    .IR_out(IR_out), 
+    .SE_16(SE_16)
+    );
+
+

@@ -1,0 +1,43 @@
+
+
+
+// Instantiate the module
+MCU instance_name (
+    .sys_clk(sys_clk), 
+    .reset(reset), 
+    .intr(intr), 
+    .C(C), 
+    .N(N), 
+    .Z(Z), 
+    .V(V), 
+    .IR(IR), 
+    .int_ack(int_ack), 
+    .pc_sel(pc_sel), 
+    .pc_ld(pc_ld), 
+    .pc_inc(pc_inc), 
+    .ir_ld(ir_ld), 
+    .im_cs(im_cs), 
+    .im_rd(im_rd), 
+    .im_wr(im_wr), 
+    .D_En(D_En), 
+    .DA_Sel(DA_Sel), 
+    .T_Sel(T_Sel), 
+    .HILO_ld(HILO_ld), 
+    .Y_Sel(Y_Sel), 
+    .dm_cs(dm_cs), 
+    .dm_rd(dm_rd), 
+    .dm_wr(dm_wr), 
+    .D_In_Sel(D_In_Sel), 
+    .IO_wr(IO_wr), 
+    .IO_rd(IO_rd), 
+    .FS(FS), 
+    .S_Sel(S_Sel), 
+    .D_OUT_Sel(D_OUT_Sel), 
+    .ps_c(ps_c), 
+    .ps_n(ps_n), 
+    .ps_z(ps_z), 
+    .ps_v(ps_v), 
+    .ld_Flags(ld_Flags)
+    );
+
+

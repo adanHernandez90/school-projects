@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj MIPS -o "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS/IntegerDataPath_2.tfi" -lib work "C:/Users/Ludwig/Documents/CECS 440 Comp Arch/CPU/MIPS//IntegerDataPath_2.v" -module IntegerDataPath_2 -template C:/Xilinx/12.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
